@@ -66,8 +66,8 @@ namespace PBOcode3
         }
         public override string ToString()
         {
-            return string.Format("{0}: \n{1}: {2} ({3}) \n{4}: {5} \n{6}: {7:C}", 
-                "Invoice", "bagian nomor", BagianNomor, BagianDeskripsi, "kuantitas", Kuantitas, "harga per item", HargaPeritem);
+            return string.Format("{0}: \n{1}        : {2} ({3}) \n{4}           : {5} \n{6}      : {7:C}",
+                "Invoice", "Bagian Nomor", BagianNomor, BagianDeskripsi, "Kuantitas", Kuantitas, "Harga Per Item", HargaPeritem);
         }
         public decimal GetJumlahPembayaran()
         {
@@ -108,7 +108,7 @@ namespace PBOcode3
         }
         public override string ToString()
         {
-            return string.Format("{0} {1}\nSocial Security Number : {2}", NamaDepan, NamaBelakang, SocialSecurityNumber);
+            return string.Format("{0} {1}\nKTP                 : {2}", NamaDepan, NamaBelakang, SocialSecurityNumber);
         }
         public abstract decimal GetJumlahPembayaran();
     }
@@ -137,7 +137,7 @@ namespace PBOcode3
         }
         public override string ToString()
         {
-            return string.Format("Gaji karyawan : {0}\n{1}: {2:C}", base.ToString(), "gaji mingguan", GajiMingguan);
+            return string.Format("Gaji Karyawan       : {0}\n{1}       : {2:C}", base.ToString(), "Gaji Mingguan", GajiMingguan);
         }
     }
     public class PayableInterfaceTest
@@ -151,11 +151,11 @@ namespace PBOcode3
             payableObjects[2] = new GajiKaryawan("John", "Smith", "111-11-1111", 800.00M);
             payableObjects[3] = new GajiKaryawan("Lisa", "Barnes", "888-88-8888", 1200.00M);
 
-            Console.WriteLine("Invoice dan Karyawan akan diproses secara polymorphisme\n");
+            Console.WriteLine("Invoice Dan Karyawan Akan Diproses Secara Polymorphisme\n=======================================================");
 
             foreach (IPayable currentPayable in payableObjects)
             {
-                Console.WriteLine("{0} \n{1}: {2:C}\n", currentPayable, "tanggal jatuh tempo", currentPayable.GetJumlahPembayaran());
+                Console.WriteLine("{0} \n{1} : {2:C}\n", currentPayable, "Tanggal Jatuh Tempo", currentPayable.GetJumlahPembayaran());
             }
             Console.ReadLine();
         }
