@@ -90,7 +90,13 @@ namespace PBOcode3
         // mengembalikan representasi string dari objek KomisiKaryawan
         public override string ToString()
         {
-            return string.Format("Nama Depan : {0} \nNama Belakang : {1} \nSSN : {2} \nPenjualan Kotor : {3} \nTingkat Komisi : {4} \nGaji Pokok : {5}", Nama_Depan, Nama_Belakang, KTP, penjualanKotor, tingkatKomisi, gajiPokok);
+            return string.Format("" +
+                "Nama Depan         : {0} \n" +
+                "Nama Belakang      : {1} \n" +
+                "SSN                : {2} \n" +
+                "Penjualan Kotor    : {3} \n" +
+                "Tingkat Komisi     : {4} \n" +
+                "Gaji Pokok         : {5}", Nama_Depan, Nama_Belakang, KTP, penjualanKotor, tingkatKomisi, gajiPokok);
         }
         // Menguji kelas KomisiKaryawan
         static void Main(string[] args)
@@ -98,20 +104,20 @@ namespace PBOcode3
             // membuat instance objek KomisiKaryawan
             KomisiTambahanKaryawan karyawan = new KomisiTambahanKaryawan("Bob", "Lewis", "333-33-333", 5000.00M, .04M, 300.00M);
             // menampilkan data KomisiKaryawan
-            Console.WriteLine("Informasi karyawan diperoleh dengan properti dan metode : \n");
-            Console.WriteLine("Nama Depan adalah {0}", karyawan.Nama_Depan);
-            Console.WriteLine("Nama Belakang adalah {0}", karyawan.Nama_Belakang);
-            Console.WriteLine("KTP adalah {0}", karyawan.KTP);
-            Console.WriteLine("Penjualan Kotornya adalah {0:C}", karyawan.PenjualanKotor);
-            Console.WriteLine("Tingkat Komisinya adalah {0:F2}", karyawan.TingkatKomisi);
-            Console.WriteLine("Gaji Pokoknya adalah {0:C}", karyawan.GajiPokok);
-            Console.WriteLine("Pendapatanya adalah {0:C}", karyawan.Pendapatan());
+            Console.WriteLine("Informasi Karyawan Diperoleh Dengan Properti dan Metode : \n=============================================================");
+            Console.WriteLine("Nama Depan adalah            : {0}", karyawan.Nama_Depan);
+            Console.WriteLine("Nama Belakang adalah         : {0}", karyawan.Nama_Belakang);
+            Console.WriteLine("KTP adalah                   : {0}", karyawan.KTP);
+            Console.WriteLine("Penjualan Kotornya adalah    : {0:C}", karyawan.PenjualanKotor);
+            Console.WriteLine("Tingkat Komisinya adalah     : {0:F2}", karyawan.TingkatKomisi);
+            Console.WriteLine("Gaji Pokoknya adalah         : {0:C}", karyawan.GajiPokok);
+            Console.WriteLine("Pendapatanya adalah          : {0:C}", karyawan.Pendapatan());
 
             karyawan.PenjualanKotor = 5000.00M; // menetapkan penjualan kotor
             karyawan.TingkatKomisi = .04M; // menetapkan tingkat  komisi
             karyawan.GajiPokok = 1000.00M; // menetapkan gaji pokok
-            Console.WriteLine("\n{0}:\n\n{1}", "Informasi karyawan yang diperbarui diperoleh dari ToString", karyawan);
-            Console.WriteLine("Pendapatan : {0:C}", karyawan.Pendapatan());
+            Console.WriteLine("\n{0}\n{1}", "Informasi Karyawan Yang Diperbarui Diperoleh Dari ToString :\n=============================================================", karyawan);
+            Console.WriteLine("Pendapatan         : {0:C}", karyawan.Pendapatan());
             Console.ReadLine();
         }
     }
