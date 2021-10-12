@@ -67,7 +67,7 @@ namespace PBOcode3
         public override string ToString()
         {
             return string.Format("{0}: \n{1}: {2} ({3}) \n{4}: {5} \n{6}: {7:C}", 
-                "faktur", "bagian nomor", BagianNomor, BagianDeskripsi, "kuantitas", Kuantitas, "harga per item", HargaPeritem);
+                "Invoice", "bagian nomor", BagianNomor, BagianDeskripsi, "kuantitas", Kuantitas, "harga per item", HargaPeritem);
         }
         public decimal GetJumlahPembayaran()
         {
@@ -151,7 +151,7 @@ namespace PBOcode3
             payableObjects[2] = new GajiKaryawan("John", "Smith", "111-11-1111", 800.00M);
             payableObjects[3] = new GajiKaryawan("Lisa", "Barnes", "888-88-8888", 1200.00M);
 
-            Console.WriteLine("Faktur dan Karyawan akan diproses secara polymorphisme");
+            Console.WriteLine("Invoice dan Karyawan akan diproses secara polymorphisme\n");
 
             foreach (IPayable currentPayable in payableObjects)
             {
